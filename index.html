@@ -20,10 +20,48 @@
       position: fixed;
       top: 20px;
       left: 20px;
-      font-size: 5rem;
-      letter-spacing: 1rem;
+      font-size: 5rem;         /* large header */
+      letter-spacing: 1rem;    /* wide spacing between letters */
       font-weight: bold;
       color: #fff;
+    }
+
+    /* PROJECTS link under the main title */
+    .projects {
+      position: fixed;
+      top: 120px;             /* adjust distance below header */
+      left: 20px;
+      font-size: 1.5rem;
+      letter-spacing: 0.2rem;
+    }
+
+    .projects a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .projects a:hover {
+      opacity: 0.7;
+    }
+
+    /* CONTACT in bottom-left corner with hover effect */
+    .contact {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 1.2rem;
+      letter-spacing: 0.2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .contact::after {
+      content: "CONTACT";
+      transition: content 0.3s ease;
+    }
+
+    .contact:hover::after {
+      content: "damienmelchiori@gmail.com";
     }
 
     footer {
@@ -35,29 +73,17 @@
       color: #fff;
     }
 
-    .projects {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      font-size: 1.2rem;
-      letter-spacing: 0.2rem;
-    }
-
-    a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      opacity: 0.7;
-    }
-
+    /* Responsive tweaks for small screens */
     @media (max-width: 600px) {
       header {
         font-size: 2.5rem;
         letter-spacing: 0.5rem;
       }
-      footer, .projects {
+      .projects {
+        font-size: 1rem;
+        letter-spacing: 0.1rem;
+      }
+      .contact, footer {
         font-size: 1rem;
         letter-spacing: 0.1rem;
       }
@@ -67,9 +93,13 @@
 <body>
   <header>DAMIEN MELCHIORI</header>
 
+  <!-- PROJECTS link under the main title -->
   <div class="projects">
     <a href="projects.html">PROJECTS</a>
   </div>
+
+  <!-- CONTACT in bottom-left -->
+  <div class="contact"></div>
 
   <footer>@damienmelchiori</footer>
 </body>
